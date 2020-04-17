@@ -5,25 +5,22 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class PedirInformacionControlador {
 	
-	private SampleController controlador = new SampleController();
+	//private SampleController controlador = new SampleController();
 	
 	@FXML protected TextField campoNombre;
 	
 	@FXML protected TextField campoEdad;
 	
 	@FXML protected TextArea campoIntereses;
-	
-	@FXML protected Button botonAgregar;
 
 	protected String darTextoNombre() {
 		String informacion;
@@ -51,14 +48,14 @@ public class PedirInformacionControlador {
 		try {
 			Stage ventanaInformacion = new Stage();
 			ventanaInformacion.setTitle("Informacion del usuario.");
-			VBox vbox = (VBox)FXMLLoader.load(getClass().getResource("Sample.fxml"));
 			ventanaInformacion.initModality(Modality.APPLICATION_MODAL);
+			Parent vbox = FXMLLoader.load(getClass().getResource("Sample.fxml"));
 			Scene scene = new Scene(vbox);
 			ventanaInformacion.setScene(scene);
 			ventanaInformacion.show();
-			controlador.dondeVaNombre.setText(darTextoNombre());//<---- Here starts the exception.
+			//controlador.dondeVaNombre.setText(campoNombre.getText());//<---- Here starts the exception.
 		}catch( IOException e ) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getLocalizedMessage());
 		}
 	}
 

@@ -6,6 +6,8 @@ import javafx.scene.image.ImageView;
 
 public class SampleController {
 	
+	private PedirInformacionControlador informacion;
+	
 	@FXML protected Label dondeVaNombre;
 	
 	@FXML protected Label dondeVaEdad;
@@ -21,7 +23,9 @@ public class SampleController {
 	}
 
 	@FXML protected void regresarAVentana() {
-		System.exit(1);
+		dondeVaNombre.setText(informacion.darTextoNombre());
+		dondeVaEdad.setText(informacion.darTextoEdad());
+		dondeVaIntereses.setText(informacion.darTextoIntereses());
 	}
 	
 }

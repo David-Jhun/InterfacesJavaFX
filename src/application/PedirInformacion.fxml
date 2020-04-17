@@ -111,7 +111,7 @@
                   </StackPane>
                   <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <Button fx:id="botonAgregar" alignment="CENTER" maxWidth="100.0" mnemonicParsing="false" onAction="#subir" text="Subir">
+                        <Button alignment="CENTER" maxWidth="100.0" mnemonicParsing="false" onAction="#subir" text="Subir">
                            <font>
                               <Font name="Arial Bold" size="16.0" />
                            </font>
