@@ -56,9 +56,7 @@ public class PedirInformacionControlador {
 			Scene scene = new Scene(vbox);
 			ventanaInformacion.setScene(scene);
 			ventanaInformacion.show();
-			controlador.dondeVaNombre.setText(darTextoNombre());
-			controlador.dondeVaEdad.setText(darTextoEdad());
-			controlador.dondeVaIntereses.setText(darTextoIntereses());
+			controlador.dondeVaNombre.setText(darTextoNombre());//<---- Here starts the exception.
 		}catch( IOException e ) {
 			System.out.println(e.getMessage());
 		}
