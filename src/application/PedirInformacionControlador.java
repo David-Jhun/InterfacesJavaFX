@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 public class PedirInformacionControlador {
 	
-	private SampleController controlador;
+	private SampleController controlador = new SampleController();
 	
 	@FXML protected TextField campoNombre;
 	
