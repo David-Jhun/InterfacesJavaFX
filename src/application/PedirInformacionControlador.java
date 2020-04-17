@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 
 public class PedirInformacionControlador {
 	
+	private SampleController controlador;
+	
 	@FXML protected TextField campoNombre;
 	
 	@FXML protected TextField campoEdad;
@@ -54,6 +56,9 @@ public class PedirInformacionControlador {
 			Scene scene = new Scene(vbox);
 			ventanaInformacion.setScene(scene);
 			ventanaInformacion.show();
+			controlador.dondeVaNombre.setText(darTextoNombre());
+			controlador.dondeVaEdad.setText(darTextoEdad());
+			controlador.dondeVaIntereses.setText(darTextoIntereses());
 		}catch( IOException e ) {
 			System.out.println(e.getMessage());
 		}
