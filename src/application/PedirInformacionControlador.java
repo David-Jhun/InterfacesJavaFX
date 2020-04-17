@@ -14,46 +14,31 @@ import javafx.stage.Stage;
 
 public class PedirInformacionControlador {
 	
-	//private SampleController controlador = new SampleController();
-	
 	@FXML protected TextField campoNombre;
 	
 	@FXML protected TextField campoEdad;
 	
 	@FXML protected TextArea campoIntereses;
 
-	protected String darTextoNombre() {
-		String informacion;
-		informacion = campoNombre.getText();
-		return informacion;
-	}
-	
-	protected String darTextoEdad() {
-		String informacion;
-		informacion = campoEdad.getText();
-		return informacion;
-	}
-	
-	protected String darTextoIntereses() {
-		String informacion;
-		informacion = campoIntereses.getText();
-		return informacion;
-	}
-	
 	@FXML protected void subir(ActionEvent e) {
 		cambiarSiguienteVentana();
 	}
 	
 	private void cambiarSiguienteVentana(){
 		try {
-			Stage ventanaInformacion = new Stage();
-			ventanaInformacion.setTitle("Informacion del usuario.");
-			ventanaInformacion.initModality(Modality.APPLICATION_MODAL);
-			Parent vbox = FXMLLoader.load(getClass().getResource("Sample.fxml"));
-			Scene scene = new Scene(vbox);
-			ventanaInformacion.setScene(scene);
-			ventanaInformacion.show();
-			//controlador.dondeVaNombre.setText(campoNombre.getText());//<---- Here starts the exception.
+			Stage stage = new Stage();
+			stage.setTitle("Informacion ingresada.");
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("Sample.fxml"));
+			Parent root = loader.load();
+			Scene scene = new Scene(root);
+			SampleController controlador = loader.getController();
+			controlador.dondeVaNombre.setText(campoNombre.getText());
+			controlador.dondeVaEdad.setText(campoEdad.getText());
+			controlador.dondeVaIntereses.setText(campoIntereses.getText());
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(scene);
+			stage.showAndWait();
 		}catch( IOException e ) {
 			System.out.println(e.getLocalizedMessage());
 		}
