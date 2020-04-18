@@ -16,7 +16,7 @@ public class Main extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("Can I go out on the curfew?");
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource(""));
+		loader.setLocation(Main.class.getResource("CurfewRestrictions.fxml"));
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);

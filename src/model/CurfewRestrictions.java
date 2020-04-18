@@ -12,6 +12,10 @@ public class CurfewRestrictions {
 		this.age = age;
 	}
 	
+	public int getAge() {
+		return age;
+	}
+	
 	public String canIGoOutside() {
 		String message = "";
 		if( age < 22 )
