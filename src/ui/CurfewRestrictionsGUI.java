@@ -1,5 +1,7 @@
 package ui;
 
+import java.io.File;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -7,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -33,7 +36,7 @@ public class CurfewRestrictionsGUI {
     				stage.setTitle("Option 1.");
     				VBox vbox = new VBox(20);
     				StackPane stackForImage = new StackPane();
-    				ImageView image = new ImageView("imagenes/child.PNG");
+    				ImageView image = new ImageView(new Image(new File("imagenes/child.PNG").toURI().toString()));
     				stackForImage.getChildren().add(image);
     				StackPane stackForText = new StackPane();
     				Label text = new Label(message);
@@ -48,7 +51,7 @@ public class CurfewRestrictionsGUI {
     				stage.setTitle("Option 2.");
     				VBox vbox = new VBox(20);
     				StackPane stackForImage = new StackPane();
-    				ImageView image = new ImageView("imagenes/adult.PNG");
+    				ImageView image = new ImageView(new Image(new File("imagenes/adult.PNG").toURI().toString()));
     				stackForImage.getChildren().add(image);
     				StackPane stackForText = new StackPane();
     				Label text = new Label(message);
@@ -63,7 +66,7 @@ public class CurfewRestrictionsGUI {
     				stage.setTitle("Option 3.");
     				VBox vbox = new VBox(20);
     				StackPane stackForImage = new StackPane();
-    				ImageView image = new ImageView("imagenes/grand.PNG");
+    				ImageView image = new ImageView(new Image(new File("imagenes/grand.PNG").toURI().toString()));
     				stackForImage.getChildren().add(image);
     				StackPane stackForText = new StackPane();
     				Label text = new Label(message);
